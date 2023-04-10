@@ -1,3 +1,9 @@
 <header>
-    <h1>A b8 store</h1>
+    <h1>{{ shop.name }}</h1>
+    
+    {% comment %} navigation {% endcomment %}
+
+    {% for link in linklists.main-menu.links %}
+        <ul>{{ link.title | link_to: link.url }}</ul>
+    {% endfor %}
 </header>
