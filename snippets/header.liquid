@@ -1,9 +1,16 @@
 <header>
-    <h1>{{ shop.name }}</h1>
-    
-    {% comment %} navigation {% endcomment %}
+  <h1>{{ shop.name }}</h1>
 
-    {% for link in linklists.main-menu.links %}
-        <ul>{{ link.title | link_to: link.url }}</ul>
-    {% endfor %}
+  {% comment %} navigation {% endcomment %}
+
+  {% for link in linklists['main-menu'].links %}
+    <ul>
+      {{ link.title | link_to: link.url }}
+    </ul>
+  {% endfor %}
+
+  <form action="/search">
+    <input type="search" name="q">
+    <button type="submit">Search</button>
+  </form>
 </header>
