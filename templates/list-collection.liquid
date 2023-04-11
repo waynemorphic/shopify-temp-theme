@@ -1,0 +1,12 @@
+{% paginate collections by 5 %}
+  <h1>Collections</h1>
+
+  {% for collection in collections %}
+    <a href="{{ collection.url}}">
+      <h2>{{ collection.title }}</h2>
+      <p>Products : {{ collection.all_products_count }}</p>
+    </a>
+  {% endfor %}
+
+  {{ paginate | default_pagination }}
+{% endpaginate %}
